@@ -6,11 +6,14 @@ import BestPokemon from "./BestPokemon";
 const appName = "CYF's";
 const abilities = ["Anticipation", "Adaptability", "Run-Away"];
 const date = new Date().toLocaleDateString();
+function logWhenClicked() {
+  console.log("hi");
+}
 
 function App() {
   return (
     <div>
-      <Logo appName={appName} />
+      <Logo handleClick={logWhenClicked} appName={appName} />
       <BestPokemon abilities={abilities} />
       <CaughtPokemon date={date} />
     </div>

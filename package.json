@@ -5,6 +5,7 @@
   "dependencies": {
     "@codeyourfuture/eslint-config-standard": "^3.0.3",
     "cross-env": "^7.0.3",
+    "json-pokemon": "^1.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",

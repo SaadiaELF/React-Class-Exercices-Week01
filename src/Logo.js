@@ -1,5 +1,6 @@
 import React from "react";
 
+
 const Logo = (props) => {
   return (
     <header>
@@ -7,6 +8,7 @@ const Logo = (props) => {
       <img
         src="https://assets.pokemon.com/assets/cms2/img/pokedex/full/016.png"
         alt="pokedex"
+        onClick={props.handleClick}
       ></img>
     </header>
   );
