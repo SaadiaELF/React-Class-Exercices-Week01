@@ -3,6 +3,7 @@ import Logo from "./components/Logo";
 import CaughtPokemon from "./components/CaughtPokemon";
 import BestPokemon from "./components/BestPokemon";
 import pokemons from "json-pokemon";
+import PokemonCity from "./components/PokemonCity";
 
 function App() {
   const appName = "CYF's";
@@ -24,6 +25,7 @@ function App() {
       <Logo handleClick={logWhenClicked} appName={appName} />
       <BestPokemon abilities={abilities} />
       <CaughtPokemon handleClick={catchPokemon} pokemons={caught} date={date} />
+      <PokemonCity />
     </div>
   );
 }
