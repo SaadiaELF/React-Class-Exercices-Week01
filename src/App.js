@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import Logo from "./components/Logo";
 import CaughtPokemon from "./components/CaughtPokemon";
 import BestPokemon from "./components/BestPokemon";
-import PokemonCity from "./components/PokemonCity";
+// import PokemonCity from "./components/PokemonCity";
 import pokemons from "json-pokemon";
+import PokemonInfo from "./components/PokemonInfo";
 
 function App() {
   const appName = "CYF's";
@@ -28,18 +30,32 @@ function App() {
     setPokemonNameInput(e.target.value);
   }
   return (
-    <div>
+    <BrowserRouter>
+      <Link to="/best-pokemon">Best Pokemon</Link>
+      <Link to="/caught-pokemon">Caught Pokemon</Link>
       <Logo handleClick={logWhenClicked} appName={appName} />
-      <BestPokemon abilities={abilities} />
-      <CaughtPokemon
-        handleClick={catchPokemon}
-        pokemonsCaught={caught}
-        date={date}
-        value={pokemonNameInput}
-        handleChange={handleInputChange}
-      />
-      <PokemonCity />
-    </div>
+
+      <Routes>
+        <Route
+          path="/best-pokemon"
+          element={<BestPokemon abilities={abilities} />}
+        />
+        <Route
+          path="/caught-pokemon"
+          element={
+            <CaughtPokemon
+              handleClick={catchPokemon}
+              pokemonsCaught={caught}
+              date={date}
+              value={pokemonNameInput}
+              handleChange={handleInputChange}
+            />
+          }
+        />
+        <Route path="/pokemon/:name" element={<PokemonInfo />} />
+      </Routes>
+      {/* <PokemonCity /> */}
+    </BrowserRouter>
   );
 }
 export default App;
